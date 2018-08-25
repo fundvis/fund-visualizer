@@ -1,13 +1,13 @@
 {
-  "name": "ngx-admin",
-  "version": "2.3.0",
+  "name": "fund-visualizer",
+  "version": "1.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akveo/ngx-admin.git"
+    "url": "git+https://github.com/nullpointer/fund-visualizer.git"
   },
   "bugs": {
-    "url": "https://github.com/akveo/ngx-admin/issues"
+    "url": "https://github.com/nullpointer/fund-visualizer/issues"
   },
   "browserslist": [
     "> 1%",
