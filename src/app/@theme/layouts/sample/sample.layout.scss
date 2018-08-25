@@ -110,13 +110,13 @@
         & > .menu-item:first-child {
           .menu-title {
             &::after {
-              content: 'new';
-              color: nb-theme(color-white);
+              // content: 'new';
+              // color: nb-theme(color-white);
               margin-left: 1rem;
-              background: nb-theme(color-danger);
-              padding: 0 0.5rem;
-              border-radius: nb-theme(radius);
-              font-size: nb-theme(font-size-sm);
+              // background: nb-theme(color-danger);
+              // padding: 0 0.5rem;
+              // border-radius: nb-theme(radius);
+              // font-size: nb-theme(font-size-sm);
             }
           }
         }
