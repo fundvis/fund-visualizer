@@ -36,7 +36,7 @@ export class RankComponent implements AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this.github.readFile('2018/08/26/all.json').then(data => {
+        this.github.readFile('2018/08/26/gupiao.json').then((data: Array<any>) => {
             this.source.load(data);
         });
     }

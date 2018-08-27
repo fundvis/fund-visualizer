@@ -9,7 +9,7 @@ export class GithubService {
         console.info('GithubService created');
     }
 
-    public readFile(filepath) {
+    public readFile(filepath): Promise<any> {
         const url = this.FILE_API + filepath;
         return this.http.get(url).toPromise();
     }
