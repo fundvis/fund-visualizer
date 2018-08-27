@@ -14,6 +14,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GithubService } from './github.service';
+
+const APP_PROVIDERS = [
+  GithubService,
+];
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +35,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   bootstrap: [AppComponent],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
+    APP_PROVIDERS,
   ],
 })
 export class AppModule {
