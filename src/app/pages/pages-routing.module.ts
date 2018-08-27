@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { RankComponent } from './rank/rank.component';
 
 const routes: Routes = [{
   path: '',
@@ -11,6 +12,9 @@ const routes: Routes = [{
   children: [{
     path: 'dashboard',
     component: ECommerceComponent,
+  }, {
+    path: 'rank',
+    component: RankComponent,
   }, {
     path: '',
     redirectTo: 'dashboard',

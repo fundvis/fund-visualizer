@@ -55,6 +55,7 @@
     "angular2-chartjs": "0.4.1",
     "angular2-toaster": "6.0.0",
     "bootstrap": "4.0.0",
+    "buffer": "^5.2.0",
     "chart.js": "^2.7.2",
     "ckeditor": "4.7.3",
     "classlist.js": "1.1.20150312",

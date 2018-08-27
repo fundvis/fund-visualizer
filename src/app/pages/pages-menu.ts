@@ -6,4 +6,9 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-home',
     link: '/pages/dashboard',
   },
+  {
+    title: '基金排行榜',
+    icon: 'nb-star',
+    link: '/pages/rank',
+  },
 ];
