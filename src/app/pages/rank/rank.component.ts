@@ -5,6 +5,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 @Component({
     selector: 'ngx-rank',
     templateUrl: 'rank.component.html',
+    styleUrls: ['rank.component.scss'],
   })
 export class RankComponent implements AfterViewInit {
 
@@ -28,18 +29,18 @@ export class RankComponent implements AfterViewInit {
         edit: false,
       },
       columns: {
-        code: { title: '编号', type: 'string' },
-        name: { title: '名称', type: 'string' },
-        unitNetWorth: { title: '单位净值', type: 'string' },
-        dayOfGrowth: { title: '日增长率', type: 'string' },
-        recent1Week: { title: '近一周', type: 'string' },
-        recent1Month: { title: '近一月', type: 'string' },
-        recent3Month: { title: '近三月', type: 'string' },
-        recent6Month: { title: '近六月', type: 'string' },
-        recent1Year: { title: '近一年', type: 'string' },
-        recent2Year: { title: '近两年', type: 'string' },
-        recent3Year: { title: '近三年', type: 'string' },
-        fromBuild: { title: '成立以来', type: 'string' },
+        code: { title: '编号', type: 'string', filter: false },
+        name: { title: '名称', type: 'string', filter: false },
+        unitNetWorth: { title: '单位净值', type: 'string', filter: false },
+        dayOfGrowth: { title: '日增长率', type: 'string', filter: false },
+        recent1Week: { title: '近一周', type: 'string', filter: false },
+        recent1Month: { title: '近一月', type: 'string', filter: false },
+        recent3Month: { title: '近三月', type: 'string', filter: false },
+        recent6Month: { title: '近六月', type: 'string', filter: false },
+        recent1Year: { title: '近一年', type: 'string', filter: false },
+        recent2Year: { title: '近两年', type: 'string', filter: false },
+        recent3Year: { title: '近三年', type: 'string', filter: false },
+        fromBuild: { title: '成立以来', type: 'string', filter: false },
       },
     };
 
@@ -55,5 +56,20 @@ export class RankComponent implements AfterViewInit {
         this.github.readFile(filepath).then((data: Array<any>) => {
             this.source.load(data);
         });
+    }
+
+    onSearch(event): void {
+        const query = event.target.value;
+
+        if (query && query.length > 0) {
+            this.source.setFilter([
+                { field: 'code', search: query },
+                { field: 'name', search: query },
+            ], false);
+        } else {
+            this.source.setFilter([]);
+        }
+
+
     }
 }

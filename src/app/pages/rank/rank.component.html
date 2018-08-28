@@ -8,6 +8,8 @@
   </div>
 </div>
 
+<input type="text" class="search" placeholder="输入基金编号或名称..." (keyup)="onSearch($event)"/>
+
 <nb-card>
   <nb-card-body>
     <ng2-smart-table [settings]="settings" [source]="source">
