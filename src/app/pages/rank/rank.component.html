@@ -1,6 +1,16 @@
-<nb-card>  
-    <nb-card-body>
-      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
-      </ng2-smart-table>
-    </nb-card-body>
+<div class="row">
+  <div class="col-md-12">
+    <div [(ngModel)]="radioModel" (ngModelChange)="onCategoryChanged($event)" ngbRadioGroup class="btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
+      <label *ngFor="let category of categories" ngbButtonLabel class="btn btn-outline-info">
+        <input ngbButton type="radio" value="{{category.value}}"> {{category.title}}
+      </label>
+    </div>
+  </div>
+</div>
+
+<nb-card>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source">
+    </ng2-smart-table>
+  </nb-card-body>
 </nb-card>

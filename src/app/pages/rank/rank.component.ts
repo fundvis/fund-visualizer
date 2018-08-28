@@ -8,13 +8,24 @@ import { LocalDataSource } from 'ng2-smart-table';
   })
 export class RankComponent implements AfterViewInit {
 
+    categories = [
+        { value: 'all', title: '全部' },
+        { value: 'gupiao', title: '股票' },
+        { value: 'zhishu', title: '指数' },
+        { value: 'hunhe', title: '混合' },
+        { value: 'zhaiquan', title: '债券' },
+        { value: 'qdii', title: 'QDII' },
+        { value: 'lof', title: 'LOF' },
+        { value: 'fof', title: 'FOF' },
+    ];
+
     source: LocalDataSource = new LocalDataSource();
     settings = {
+      hideSubHeader: true,
       actions: {
         add: false,
         delete: false,
         edit: false,
-        hideSubHeader: true,
       },
       columns: {
         code: { title: '编号', type: 'string' },
@@ -36,7 +47,12 @@ export class RankComponent implements AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this.github.readFile('2018/08/26/gupiao.json').then((data: Array<any>) => {
+        this.onCategoryChanged('all');
+    }
+
+    onCategoryChanged(category): void {
+        const filepath = '2018/08/26/' + category + '.json';
+        this.github.readFile(filepath).then((data: Array<any>) => {
             this.source.load(data);
         });
     }
