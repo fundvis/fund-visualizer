@@ -44,6 +44,8 @@ export class RankComponent implements AfterViewInit {
       },
     };
 
+    radioModel = 'all';
+
     constructor(private github: GithubService) {
     }
 
