@@ -1,6 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { GithubService } from '../../github.service';
 import { LocalDataSource } from 'ng2-smart-table';
+import { GrowthRateViewComponent } from './growthrate.cellview';
 
 @Component({
     selector: 'ngx-rank',
@@ -32,15 +33,15 @@ export class RankComponent implements AfterViewInit {
         code: { title: '编号', type: 'string', filter: false },
         name: { title: '名称', type: 'string', filter: false },
         unitNetWorth: { title: '单位净值', type: 'string', filter: false },
-        dayOfGrowth: { title: '日增长率', type: 'string', filter: false },
-        recent1Week: { title: '近一周', type: 'string', filter: false },
-        recent1Month: { title: '近一月', type: 'string', filter: false },
-        recent3Month: { title: '近三月', type: 'string', filter: false },
-        recent6Month: { title: '近六月', type: 'string', filter: false },
-        recent1Year: { title: '近一年', type: 'string', filter: false },
-        recent2Year: { title: '近两年', type: 'string', filter: false },
-        recent3Year: { title: '近三年', type: 'string', filter: false },
-        fromBuild: { title: '成立以来', type: 'string', filter: false },
+        dayOfGrowth: { title: '日增长率', type: 'custom', filter: false, renderComponent: GrowthRateViewComponent },
+        recent1Week: { title: '近一周', type: 'custom', filter: false, renderComponent: GrowthRateViewComponent },
+        recent1Month: { title: '近一月', type: 'custom', filter: false, renderComponent: GrowthRateViewComponent },
+        recent3Month: { title: '近三月', type: 'custom', filter: false, renderComponent: GrowthRateViewComponent },
+        recent6Month: { title: '近六月', type: 'custom', filter: false, renderComponent: GrowthRateViewComponent },
+        recent1Year: { title: '近一年', type: 'custom', filter: false, renderComponent: GrowthRateViewComponent },
+        recent2Year: { title: '近两年', type: 'custom', filter: false, renderComponent: GrowthRateViewComponent },
+        recent3Year: { title: '近三年', type: 'custom', filter: false, renderComponent: GrowthRateViewComponent },
+        fromBuild: { title: '成立以来', type: 'custom', filter: false, renderComponent: GrowthRateViewComponent },
       },
     };
 
@@ -71,7 +72,5 @@ export class RankComponent implements AfterViewInit {
         } else {
             this.source.setFilter([]);
         }
-
-
     }
 }
