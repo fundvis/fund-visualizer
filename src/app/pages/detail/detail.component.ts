@@ -50,12 +50,12 @@ export class DetailComponent implements AfterViewInit {
                 type: 'bar',
                 data: yAxisData,
                 animationDelay: function (idx) {
-                    return idx * 10;
+                    return idx >> 2;
                 },
             }],
             animationEasing: 'elasticOut',
             animationDelayUpdate: function (idx) {
-                return idx * 5;
+                return idx >> 2;
             },
         };
     }
