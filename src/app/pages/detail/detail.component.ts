@@ -13,7 +13,16 @@ export class DetailComponent implements AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this.github.readFile('000057.json').then(data => {
+
+    }
+
+    onFundChanged(code) {
+        this.loadFund(code);
+    }
+
+    loadFund(code) {
+        const filepath = code + '.json';
+        this.github.readFile(filepath).then(data => {
             const netvalues = data[0]['netvalues'];
             if (netvalues) {
                 this.setOptions(netvalues);
@@ -31,20 +40,10 @@ export class DetailComponent implements AfterViewInit {
         }
 
         this.options = {
-            legend: {
-                data: ['bar'],
-                align: 'left',
-            },
+            legend: { data: ['bar'], align: 'left' },
             tooltip: {},
-            xAxis: {
-                data: xAxisData,
-                silent: false,
-                splitLine: {
-                    show: false,
-                },
-            },
-            yAxis: {
-            },
+            xAxis: { data: xAxisData, silent: false, splitLine: { show: false } },
+            yAxis: { },
             series: [{
                 name: '单位净值',
                 type: 'bar',
@@ -58,9 +57,5 @@ export class DetailComponent implements AfterViewInit {
                 return idx >> 2;
             },
         };
-    }
-
-    onSearch(event): void {
-
     }
 }

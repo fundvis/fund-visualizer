@@ -43,6 +43,7 @@
     "@nebular/security": "2.0.0-rc.10",
     "@nebular/theme": "2.0.0-rc.10",
     "@ng-bootstrap/ng-bootstrap": "1.0.0",
+    "@ng-select/ng-select": "^2.5.1",
     "bootstrap": "4.0.0",
     "classlist.js": "^1.1.20150312",
     "core-js": "2.5.1",

@@ -1,0 +1,7 @@
+<ng-select
+    placeholder="输入基金编号"
+    notFoundText="没有找到基金"
+    [items]="funds"
+    [(ngModel)]="selectedFund"
+    (change)="changeFund($event)">
+</ng-select>
