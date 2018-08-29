@@ -2,6 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import { GithubService } from '../../github.service';
 import { LocalDataSource } from 'ng2-smart-table';
 import { GrowthRateViewComponent } from './growthrate.cellview';
+import { CodeLinkViewComponent } from './codelink.cellview';
 
 @Component({
     selector: 'ngx-rank',
@@ -30,7 +31,7 @@ export class RankComponent implements AfterViewInit {
         edit: false,
       },
       columns: {
-        code: { title: '编号', type: 'string', filter: false },
+        code: { title: '编号', type: 'custom', filter: false, renderComponent: CodeLinkViewComponent },
         name: { title: '名称', type: 'string', filter: false },
         unitNetWorth: { title: '单位净值', type: 'string', filter: false },
         dayOfGrowth: { title: '日增长率', type: 'custom', filter: false, renderComponent: GrowthRateViewComponent },

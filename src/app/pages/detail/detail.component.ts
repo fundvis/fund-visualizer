@@ -1,5 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { GithubService } from '../../github.service';
+
 
 @Component({
     selector: 'ngx-fund-detail',
@@ -8,8 +10,15 @@ import { GithubService } from '../../github.service';
 export class DetailComponent implements AfterViewInit {
 
     options: any = {};
+    selectedFund;
 
-    constructor(private github: GithubService) {
+    constructor(private route: ActivatedRoute, private github: GithubService) {
+        this.route.queryParams.subscribe(data => {
+            if (data && data['code']) {
+                this.selectedFund = data['code'];
+                this.loadFund(data['code']);
+            }
+        });
     }
 
     ngAfterViewInit(): void {

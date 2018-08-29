@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import { Component, AfterViewInit, Output, EventEmitter, Input } from '@angular/core';
 import { GithubService } from '../../../github.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { GithubService } from '../../../github.service';
 })
 export class FundSelectComponent implements AfterViewInit {
 
+    @Input() selectedFund;
     @Output() fundChange = new EventEmitter<any>();
 
     funds: Array<string>;
