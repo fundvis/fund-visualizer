@@ -8,11 +8,22 @@
   </div>
 </div>
 
-<input type="text" class="search" placeholder="输入基金编号或名称..." (keyup)="onSearch($event)"/>
+<hr>
 
-<nb-card>
-  <nb-card-body>
-    <ng2-smart-table [settings]="settings" [source]="source">
-    </ng2-smart-table>
-  </nb-card-body>
-</nb-card>
+<div class="row">
+  <div class="col-md-12">
+    <input type="text" class="search" placeholder="输入基金编号或名称..." (keyup)="onSearch($event)"/>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="source">
+        </ng2-smart-table>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
