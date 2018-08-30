@@ -12,6 +12,9 @@ export class DetailComponent implements AfterViewInit {
     options: any = {};
     selectedFund;
 
+    showLoading: boolean = true;
+    loadFailed: boolean = false;
+
     constructor(private route: ActivatedRoute, private github: GithubService) {
         this.route.queryParams.subscribe(data => {
             if (data && data['code']) {
@@ -34,8 +37,19 @@ export class DetailComponent implements AfterViewInit {
         this.github.readFile(filepath).then(data => {
             const netvalues = data[0]['netvalues'];
             if (netvalues) {
+                this.loadFailed = false;
                 this.setOptions(netvalues);
+            } else {
+                this.loadFailed = true;
+                this.setOptions([]);
             }
+
+            this.showLoading = false;
+        }).catch(err => {
+            console.error(err);
+            this.loadFailed = true;
+            this.showLoading = false;
+            this.setOptions([]);
         });
     }
 
