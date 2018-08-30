@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'ngx-netvalue-view',
     template: `
-      <span style="color: blue; cursor: pointer;" (click)="onClick()">{{ renderValue }}</span>
+        <span style="color: blue; cursor: pointer;" (click)="onClick()"><b>{{ renderValue }}</b></span>
     `,
 })
 export class CodeLinkViewComponent implements ViewCell, OnInit {
