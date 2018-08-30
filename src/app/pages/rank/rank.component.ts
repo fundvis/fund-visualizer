@@ -48,7 +48,15 @@ export class RankComponent implements AfterViewInit {
 
     radioModel = 'all';
 
+    date: String;
+
     constructor(private github: GithubService) {
+        const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000);
+        const yyyy = yesterday.getFullYear();
+        const mm = yesterday.getMonth() + 1;
+        const dd = yesterday.getDate();
+
+        this.date = yyyy + '/' + (mm < 10 ? '0' : '') + mm + '/' + (dd < 10 ? '0' : '') + dd;
     }
 
     ngAfterViewInit(): void {
@@ -56,7 +64,7 @@ export class RankComponent implements AfterViewInit {
     }
 
     onCategoryChanged(category): void {
-        const filepath = '2018/08/26/' + category + '.json';
+        const filepath = this.date + '/' + category + '.json';
         this.github.readFile(filepath).then((data: Array<any>) => {
             this.source.load(data);
         });
