@@ -6,10 +6,14 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 import { FundSelectComponent } from './fund-select/fund-select.component';
 import { FundCategoryGroupComponent } from './fund-category-group/fund-category-group.component';
+import { CodeLinkViewComponent } from './fund-table-viewcell/codelink.viewcell';
+import { GrowthRateViewComponent } from './fund-table-viewcell/growthrate.viewcell';
 
 const WIDGET_COMPONENTS = [
   FundSelectComponent,
   FundCategoryGroupComponent,
+  CodeLinkViewComponent,
+  GrowthRateViewComponent,
 ];
 
 @NgModule({
@@ -20,6 +24,10 @@ const WIDGET_COMPONENTS = [
     NgSelectModule,
   ],
   exports: WIDGET_COMPONENTS,
+  entryComponents: [
+    CodeLinkViewComponent,
+    GrowthRateViewComponent,
+  ],
   providers: [
   ],
 })

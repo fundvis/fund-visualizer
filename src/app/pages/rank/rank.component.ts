@@ -1,8 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { GithubService } from '../../github.service';
 import { LocalDataSource } from 'ng2-smart-table';
-import { GrowthRateViewComponent } from './growthrate.cellview';
-import { CodeLinkViewComponent } from './codelink.cellview';
+import { GrowthRateViewComponent } from '../widget/fund-table-viewcell/growthrate.viewcell';
+import { CodeLinkViewComponent } from '../widget/fund-table-viewcell/codelink.viewcell';
 import { GlobalService } from '../../global.service';
 
 @Component({
