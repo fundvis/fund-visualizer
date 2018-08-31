@@ -10,8 +10,8 @@ import { ViewCell } from 'ng2-smart-table';
 })
 export class RankViewComponent implements ViewCell, OnInit {
 
-    rank: String;
-    total: String;
+    rank: number | string;
+    total: number | string;
 
     @Input() value: string | number;
     @Input() rowData: any;
