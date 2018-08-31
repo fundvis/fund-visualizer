@@ -8,12 +8,14 @@ import { FundSelectComponent } from './fund-select/fund-select.component';
 import { FundCategoryGroupComponent } from './fund-category-group/fund-category-group.component';
 import { CodeLinkViewComponent } from './fund-table-viewcell/codelink.viewcell';
 import { GrowthRateViewComponent } from './fund-table-viewcell/growthrate.viewcell';
+import { RankViewComponent } from './fund-table-viewcell/rank.viewcell';
 
 const WIDGET_COMPONENTS = [
   FundSelectComponent,
   FundCategoryGroupComponent,
   CodeLinkViewComponent,
   GrowthRateViewComponent,
+  RankViewComponent,
 ];
 
 @NgModule({
@@ -27,6 +29,7 @@ const WIDGET_COMPONENTS = [
   entryComponents: [
     CodeLinkViewComponent,
     GrowthRateViewComponent,
+    RankViewComponent,
   ],
   providers: [
   ],
