@@ -3,6 +3,7 @@ import { GithubService } from '../../github.service';
 import { LocalDataSource } from 'ng2-smart-table';
 import { GrowthRateViewComponent } from './growthrate.cellview';
 import { CodeLinkViewComponent } from './codelink.cellview';
+import { GlobalService } from '../../global.service';
 
 @Component({
     selector: 'ngx-rank',
@@ -50,13 +51,8 @@ export class RankComponent implements AfterViewInit {
 
     date: String;
 
-    constructor(private github: GithubService) {
-        const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000);
-        const yyyy = yesterday.getFullYear();
-        const mm = yesterday.getMonth() + 1;
-        const dd = yesterday.getDate();
-
-        this.date = yyyy + '/' + (mm < 10 ? '0' : '') + mm + '/' + (dd < 10 ? '0' : '') + dd;
+    constructor(private global: GlobalService, private github: GithubService) {
+        this.date = this.global.getYesterday();
     }
 
     ngAfterViewInit(): void {
