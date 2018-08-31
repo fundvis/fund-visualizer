@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { ThemeModule } from '../../@theme/theme.module';
 import { NgxEchartsModule } from 'ngx-echarts';
-import { NgSelectModule } from '@ng-select/ng-select';
 
 import { DetailComponent } from './detail.component';
-import { FundSelectComponent } from './fund-select/fund-select.component';
+import { WidgetModule } from '../widget/widget.module';
 
 @NgModule({
   declarations: [
     DetailComponent,
-    FundSelectComponent,
   ],
   imports: [
     ThemeModule,
     NgxEchartsModule,
-    NgSelectModule,
+    WidgetModule,
   ],
   providers: [
   ],
