@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, Output, EventEmitter, Input } from '@angular/core';
-import { GithubService } from '../../../github.service';
+import { FundService } from '../../../fund.service';
 
 @Component({
     selector: 'ngx-fund-select',
@@ -12,11 +12,11 @@ export class FundSelectComponent implements AfterViewInit {
 
     funds: Array<string>;
 
-    constructor(private github: GithubService) {
+    constructor(private service: FundService) {
     }
 
     ngAfterViewInit(): void {
-        this.github.readFile('allcodes.json').then(data => {
+        this.service.readFile('allcodes.json').then(data => {
             this.funds = data[0]['codes'];
         }).catch(err => {
             console.error(err);

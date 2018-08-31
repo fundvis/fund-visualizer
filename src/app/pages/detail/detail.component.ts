@@ -1,7 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GithubService } from '../../github.service';
-
+import { FundService } from '../../fund.service';
 
 @Component({
     selector: 'ngx-fund-detail',
@@ -15,7 +14,7 @@ export class DetailComponent implements AfterViewInit {
     showLoading: boolean = true;
     loadFailed: boolean = false;
 
-    constructor(private route: ActivatedRoute, private github: GithubService) {
+    constructor(private route: ActivatedRoute, private service: FundService) {
         this.route.queryParams.subscribe(data => {
             if (data && data['code']) {
                 this.selectedFund = data['code'];
@@ -34,7 +33,7 @@ export class DetailComponent implements AfterViewInit {
 
     loadFund(code) {
         const filepath = code + '.json';
-        this.github.readFile(filepath).then(data => {
+        this.service.readFile(filepath).then(data => {
             const netvalues = data[0]['netvalues'];
             if (netvalues) {
                 this.loadFailed = false;

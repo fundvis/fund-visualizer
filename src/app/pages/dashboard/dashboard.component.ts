@@ -1,6 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { GithubService } from '../../github.service';
-import { GlobalService } from '../../global.service';
+import { FundService } from '../../fund.service';
 import { LocalDataSource } from 'ng2-smart-table';
 import { CodeLinkViewComponent } from '../widget/fund-table-viewcell/codelink.viewcell';
 import { RankViewComponent } from '../widget/fund-table-viewcell/rank.viewcell';
@@ -32,8 +31,8 @@ export class DashboardComponent implements AfterViewInit {
     },
   };
 
-  constructor(private global: GlobalService, private github: GithubService) {
-    this.date = this.global.formatDate(new Date());
+  constructor(private service: FundService) {
+    this.date = this.service.formatDate(new Date());
   }
 
   ngAfterViewInit(): void {
@@ -42,9 +41,8 @@ export class DashboardComponent implements AfterViewInit {
 
   onCategoryChanged(category): void {
     const filepath = this.date + '/' + category + '.recommend.json';
-    this.github.readFile(filepath).then((data: Array<any>) => {
-        this.source.load(data);
+    this.service.readFile(filepath).then((data: Array<any>) => {
+      this.source.load(data);
     });
-}
-
+  }
 }

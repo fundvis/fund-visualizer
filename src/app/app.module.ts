@@ -14,12 +14,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { GithubService } from './github.service';
-import { GlobalService } from './global.service';
+import { FundService } from './fund.service';
 
 const APP_PROVIDERS = [
-  GlobalService,
-  GithubService,
+  FundService,
 ];
 
 @NgModule({

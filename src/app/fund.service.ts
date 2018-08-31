@@ -1,8 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class GlobalService {
+export class FundService {
 
+    readonly FILE_API = 'https://raw.githubusercontent.com/nullpointer/fund-data/master/';
+    constructor(private http: HttpClient) {
+        console.info('GithubService created');
+    }
+
+    public readFile(filepath): Promise<any> {
+        const url = this.FILE_API + filepath;
+        return this.http.get(url).toPromise();
+    }
 
     /**
      * Get yesterday string formatted by yyyy/MM/dd
