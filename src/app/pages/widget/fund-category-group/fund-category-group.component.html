@@ -1,0 +1,8 @@
+<div ngbRadioGroup
+    [(ngModel)]="radioModel"
+    (ngModelChange)="onCategoryChanged($event)"
+    class="btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
+    <label *ngFor="let category of categories" ngbButtonLabel class="btn btn-outline-success">
+        <input ngbButton type="radio" value="{{category.value}}"> {{category.title}}
+    </label>
+</div>

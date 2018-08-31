@@ -12,25 +12,10 @@ import { GlobalService } from '../../global.service';
   })
 export class RankComponent implements AfterViewInit {
 
-    categories = [
-        { value: 'all', title: '全部' },
-        { value: 'gupiao', title: '股票' },
-        { value: 'zhishu', title: '指数' },
-        { value: 'hunhe', title: '混合' },
-        { value: 'zhaiquan', title: '债券' },
-        { value: 'qdii', title: 'QDII' },
-        { value: 'lof', title: 'LOF' },
-        { value: 'fof', title: 'FOF' },
-    ];
-
     source: LocalDataSource = new LocalDataSource();
     settings = {
       hideSubHeader: true,
-      actions: {
-        add: false,
-        delete: false,
-        edit: false,
-      },
+      actions: { add: false, delete: false, edit: false },
       columns: {
         code: { title: '编号', type: 'custom', filter: false, renderComponent: CodeLinkViewComponent },
         name: { title: '名称', type: 'string', filter: false },
@@ -46,8 +31,6 @@ export class RankComponent implements AfterViewInit {
         fromBuild: { title: '成立以来', type: 'custom', filter: false, renderComponent: GrowthRateViewComponent },
       },
     };
-
-    radioModel = 'all';
 
     date: String;
 

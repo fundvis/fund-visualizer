@@ -1,10 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <div [(ngModel)]="radioModel" (ngModelChange)="onCategoryChanged($event)" ngbRadioGroup class="btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
-      <label *ngFor="let category of categories" ngbButtonLabel class="btn btn-outline-success">
-        <input ngbButton type="radio" value="{{category.value}}"> {{category.title}}
-      </label>
-    </div>
+     <ngx-fund-category-group (categoryChange)="onCategoryChanged($event)"></ngx-fund-category-group>
   </div>
 </div>
 

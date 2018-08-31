@@ -4,6 +4,7 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { CodeLinkViewComponent } from './codelink.cellview';
 import { GrowthRateViewComponent } from './growthrate.cellview';
+import { WidgetModule } from '../widget/widget.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { GrowthRateViewComponent } from './growthrate.cellview';
   imports: [
     ThemeModule,
     Ng2SmartTableModule,
+    WidgetModule,
   ],
   entryComponents: [
     CodeLinkViewComponent,
