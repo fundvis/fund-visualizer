@@ -32,7 +32,7 @@ export class DetailComponent implements AfterViewInit {
     }
 
     loadFund(code) {
-        const filepath = code + '.json';
+        const filepath = 'funds/' + code + '.json';
         this.service.readFile(filepath).then(data => {
             const netvalues = data[0]['netvalues'];
             if (netvalues) {
