@@ -3,7 +3,7 @@ import { ViewCell } from 'ng2-smart-table';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'ngx-netvalue-view',
+    selector: 'ngx-code-viewcell',
     template: `
         <span style="color: blue; cursor: pointer;" (click)="onClick()"><b>{{ renderValue }}</b></span>
     `,

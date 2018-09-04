@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ViewCell } from 'ng2-smart-table';
 
 @Component({
-    selector: 'ngx-netvalue-view',
+    selector: 'ngx-growth-viewcell',
     template: `
       <span [ngStyle]="{'color':value > 0 ? 'red' : 'green' }" >{{ renderValue }}</span>
     `,

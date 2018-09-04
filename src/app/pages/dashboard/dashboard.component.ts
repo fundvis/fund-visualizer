@@ -4,6 +4,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 import { CodeLinkViewComponent } from '../widget/fund-table-viewcell/codelink.viewcell';
 import { RankViewComponent } from '../widget/fund-table-viewcell/rank.viewcell';
 import { GrowthRateViewComponent } from '../widget/fund-table-viewcell/growthrate.viewcell';
+import { NameLinkViewComponent } from '../widget/fund-table-viewcell/namelink.viewcell';
 
 @Component({
   selector: 'ngx-dashboard',
@@ -19,7 +20,7 @@ export class DashboardComponent implements AfterViewInit {
     actions: { add: false, delete: false, edit: false },
     columns: {
       code: { title: '编号', type: 'custom', filter: false, renderComponent: CodeLinkViewComponent },
-      name: { title: '名称', type: 'string', filter: false },
+      name: { title: '名称', type: 'custom', filter: false, renderComponent: NameLinkViewComponent },
       unitNetWorth: { title: '单位净值', type: 'string', filter: false },
       dayOfGrowth: { title: '日增长率', type: 'custom', filter: false, renderComponent: GrowthRateViewComponent },
       rank3Month: { title: '近三月', type: 'custom', filter: false, renderComponent: RankViewComponent },
