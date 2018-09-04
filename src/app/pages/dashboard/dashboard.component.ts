@@ -32,7 +32,7 @@ export class DashboardComponent implements AfterViewInit {
   };
 
   constructor(private service: FundService) {
-    this.date = this.service.formatDate(new Date());
+    this.date = this.service.getYesterday();
   }
 
   ngAfterViewInit(): void {
