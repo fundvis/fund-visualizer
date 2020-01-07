@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.com/nullpointer/fund-visualizer.svg?branch=master)](https://travis-ci.com/nullpointer/fund-visualizer)
+[![Build Status](https://travis-ci.com/duanqz/fund-visualizer.svg?branch=master)
 
 # Fund Visualizer 
 
