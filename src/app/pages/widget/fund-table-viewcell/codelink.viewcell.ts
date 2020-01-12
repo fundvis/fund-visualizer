@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ViewCell } from 'ng2-smart-table';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'ngx-code-viewcell',
@@ -14,7 +13,7 @@ export class CodeLinkViewComponent implements ViewCell, OnInit {
     @Input() value: string | number;
     @Input() rowData: any;
 
-    constructor(private router: Router) {
+    constructor() {
     }
 
     ngOnInit() {
@@ -22,6 +21,8 @@ export class CodeLinkViewComponent implements ViewCell, OnInit {
     }
 
     onClick() {
-        this.router.navigate(['/pages/detail'], { queryParams: { code: this.value }});
+        const code = this.value;
+        const url = `http://quotes.money.163.com/fund/jzzs_${code}.html`;
+        window.open(url);
     }
 }

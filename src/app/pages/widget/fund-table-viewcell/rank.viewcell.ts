@@ -5,7 +5,7 @@ import { ViewCell } from 'ng2-smart-table';
     selector: 'ngx-rank-viewcell',
     template: `
       <i *ngIf="rank <= 10" class="ion-heart" style="color: red;"></i>
-      <span><b>{{ rank }}</b></span> / <span>{{ total }}</span>
+      <span><b>{{ rank }}</b></span>
     `,
 })
 export class RankViewComponent implements ViewCell, OnInit {

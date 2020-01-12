@@ -10,7 +10,7 @@ const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [{
-    path: 'dashboard',
+    path: 'dashboard/:category',
     component: DashboardComponent,
   }, {
     path: 'rank',
