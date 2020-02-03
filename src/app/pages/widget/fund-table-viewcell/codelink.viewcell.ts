@@ -4,7 +4,7 @@ import { ViewCell } from 'ng2-smart-table';
 @Component({
     selector: 'ngx-code-viewcell',
     template: `
-        <span style="color: blue; cursor: pointer;" (click)="onClick()"><b>{{ renderValue }}</b></span>
+        <span style="color: blue; cursor: pointer;" (click)="onClick()"><b><font size='0.3rem'>{{ renderValue }}</font></b></span>
     `,
 })
 export class CodeLinkViewComponent implements ViewCell, OnInit {

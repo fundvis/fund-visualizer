@@ -10,7 +10,7 @@ import { NameLinkViewComponent } from '../widget/fund-table-viewcell/namelink.vi
 
 @Component({
   selector: 'ngx-dashboard',
-  templateUrl: './dashboard.component.html',
+  templateUrl: './dashboard.component.html',  
 })
 export class DashboardComponent implements AfterViewInit {
 
@@ -32,7 +32,7 @@ export class DashboardComponent implements AfterViewInit {
       rank2Year: { title: '近两年', type: 'custom', filter: false, renderComponent: RankViewComponent },
       rank3Year: { title: '近三年', type: 'custom', filter: false, renderComponent: RankViewComponent },
       rankFromBuild: { title: '成立以来', type: 'custom', filter: false, renderComponent: RankViewComponent },
-      unitNetWorth: { title: '单位净值', type: 'string', filter: false },
+      unitNetWorth: { title: '单位净值', type: 'string', filter: false, renderComponent: GrowthRateViewComponent },
       dayOfGrowth: { title: '日增长率', type: 'custom', filter: false, renderComponent: GrowthRateViewComponent },
     },
   };

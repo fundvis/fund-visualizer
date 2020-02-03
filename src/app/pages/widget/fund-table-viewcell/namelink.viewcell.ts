@@ -4,7 +4,7 @@ import { ViewCell } from 'ng2-smart-table';
 @Component({
     selector: 'ngx-name-viewcell',
     template: `
-        {{renderValue}}
+        <font size='0.3rem'>{{renderValue}}</font>
     `,
 })
 export class NameLinkViewComponent implements ViewCell, OnInit {
