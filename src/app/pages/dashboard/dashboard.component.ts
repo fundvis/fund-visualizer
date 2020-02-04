@@ -10,7 +10,7 @@ import { NameLinkViewComponent } from '../widget/fund-table-viewcell/namelink.vi
 
 @Component({
   selector: 'ngx-dashboard',
-  templateUrl: './dashboard.component.html',  
+  templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent implements AfterViewInit {
 
