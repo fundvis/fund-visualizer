@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class FundService {
 
-    readonly FILE_API = 'https://fundvis.nullpointer.ltd/';
+    readonly FILE_API = 'https://funddata.nullpointer.ltd/';
     constructor(private http: HttpClient) {
         console.info('GithubService created');
     }
