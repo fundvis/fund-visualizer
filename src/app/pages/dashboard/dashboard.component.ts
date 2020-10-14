@@ -49,7 +49,7 @@ export class DashboardComponent implements AfterViewInit {
 
   loadDataByCategory(category): void {
     if (category == null) {
-      category = 'all';
+      category = 'zhishu';
     }
 
     this._setCategoryName(category);
