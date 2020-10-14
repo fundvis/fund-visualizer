@@ -1,11 +1,11 @@
 import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
-  {
-    title: '全部',
-    icon: 'nb-grid-a',
-    link: '/pages/dashboard/all',
-  },
+  // {
+  //   title: '全部',
+  //   icon: 'nb-grid-a',
+  //   link: '/pages/dashboard/all',
+  // },
   {
     title: '指数型',
     icon: 'nb-bar-chart',
@@ -31,11 +31,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-locked',
     link: '/pages/dashboard/qdii',
   },
-  {
-    title: 'LOF(ETF中国化)',
-    icon: 'nb-coffee-maker',
-    link: '/pages/dashboard/lof',
-  },
+  // {
+  //   title: 'LOF(ETF中国化)',
+  //   icon: 'nb-coffee-maker',
+  //   link: '/pages/dashboard/lof',
+  // },
   {
     title: 'FOF(投资基金的基金)',
     icon: 'nb-lightbulb',
