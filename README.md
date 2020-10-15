@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/fundvis/fund-visualizer.svg?branch=master)](https://travis-ci.com/fundvis/fund-visualizer)
 
 # Fund Visualizer 
 
