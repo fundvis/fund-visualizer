@@ -1,12 +1,7 @@
 language: node_js
 
-sudo: false
-dist: trusty
-
 node_js:
-  - '8'
-  - '9'
-  - '10'
+  - stable
 
 branches:
   only:
